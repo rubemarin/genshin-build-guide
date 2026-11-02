@@ -4,8 +4,8 @@ export const vesnaGuide: CharacterGuide = {
   id: 'vesna',
   name: 'ヴェスナ',
   subtitle: '初心者のための育て方・使い方',
-  headerImage: '/images/characters/vesna/header.webp',
-  iconImage: '/images/characters/vesna/icon.webp',
+  headerImage: `${import.meta.env.BASE_URL}images/characters/vesna/header.webp`,
+  iconImage: `${import.meta.env.BASE_URL}images/characters/vesna/icon.webp`,
   artifacts: {
     recommendedSet: '純血の証 4セット',
     effects: [
@@ -37,7 +37,7 @@ export const vesnaGuide: CharacterGuide = {
     {
       id: 'team-1', title: '編成1',
       members: [
-        { characterId: 'vesna', name: 'ヴェスナ', artifactSet: '純血の証 4セット', icon: '/images/characters/vesna/icon.webp' },
+        { characterId: 'vesna', name: 'ヴェスナ', artifactSet: '純血の証 4セット', icon: `${import.meta.env.BASE_URL}images/characters/vesna/icon.webp` },
         { characterId: 'member-a', name: 'キャラクター名を設定', artifactSet: '聖遺物セットを設定' },
         { characterId: 'member-b', name: 'キャラクター名を設定', artifactSet: '聖遺物セットを設定' },
         { characterId: 'member-c', name: 'キャラクター名を設定', artifactSet: '聖遺物セットを設定' },
