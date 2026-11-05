@@ -6,6 +6,7 @@ import { ComboSection } from '../components/ComboSection';
 import { StatusSection } from '../components/StatusSection';
 import { StickyTabs } from '../components/StickyTabs';
 import { TalentSection } from '../components/TalentSection';
+import { WeaponSection } from '../components/WeaponSection';
 import { TeamSection } from '../components/TeamSection';
 import { getCharacterGuide } from '../data/characters';
 import type { GuideTab } from '../types/character';
@@ -13,7 +14,7 @@ import type { GuideTab } from '../types/character';
 export function CharacterPage() {
   const { characterId = '' } = useParams();
   const guide = getCharacterGuide(characterId);
-  const [activeTab, setActiveTab] = useState<GuideTab>('artifacts');
+  const [activeTab, setActiveTab] = useState<GuideTab>('weapons');
 
   if (!guide) {
     return (
@@ -30,6 +31,7 @@ export function CharacterPage() {
       <CharacterHeader name={guide.name} subtitle={guide.subtitle} image={guide.headerImage} />
       <StickyTabs activeTab={activeTab} onChange={setActiveTab} />
       <main className="page-content">
+        {activeTab === 'weapons' && <WeaponSection weapons={guide.weapons} />}
         {activeTab === 'artifacts' && <ArtifactSection guide={guide.artifacts} />}
         {activeTab === 'status' && <StatusSection profiles={guide.statusProfiles} note={guide.statusNote} />}
         {activeTab === 'talents' && <TalentSection talents={guide.talents} note={guide.talentNote} />}

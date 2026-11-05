@@ -1,4 +1,14 @@
-export type GuideTab = 'artifacts' | 'status' | 'talents' | 'teams' | 'combo';
+export type GuideTab = 'weapons' | 'artifacts' | 'status' | 'talents' | 'teams' | 'combo';
+
+export interface WeaponGuide {
+  name: string;
+  rarity: string;
+  baseAttack: string;
+  subStat: string;
+  refinement: string;
+  effects: string[];
+  image: string;
+}
 
 export interface ArtifactEffect {
   count: string;
@@ -65,6 +75,7 @@ export interface CharacterGuide {
   subtitle: string;
   headerImage: string;
   iconImage: string;
+  weapons: WeaponGuide[];
   artifacts: ArtifactGuide;
   statusProfiles: StatusProfile[];
   statusNote: string;

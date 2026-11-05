@@ -6,6 +6,7 @@ interface StickyTabsProps {
 }
 
 const tabs: { id: GuideTab; label: string }[] = [
+  { id: 'weapons', label: '武器' },
   { id: 'artifacts', label: '聖遺物' },
   { id: 'status', label: 'ステータス' },
   { id: 'talents', label: '天賦' },
